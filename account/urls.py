@@ -26,8 +26,6 @@ urlpatterns = [
     path('edit/', views.edit, name='edit'),
     # social auth views
     path('social-auth', include('social_django.urls', namespace='social')),
-    # unused views
-    # path('login/', views.user_login, name='login')
 ]
 
 if settings.DEBUG:
