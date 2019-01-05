@@ -8,6 +8,7 @@ from django.shortcuts import render
 from .forms import LoginForm, ProfileEditForm, UserEditForm, UserRegistrationForm
 from .models import Profile
 
+
 @login_required
 def dashboard(request):
     return render(request,
