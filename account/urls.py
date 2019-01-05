@@ -2,7 +2,7 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
-from django.urls import path
+from django.urls import include, path
 
 # local modules
 from . import views
@@ -23,7 +23,9 @@ urlpatterns = [
     # new user registration
     path('register/', views.register, name='register'),
     # user profile views
-    path('edit/', views.edit, name='edit')
+    path('edit/', views.edit, name='edit'),
+    # social auth views
+    path('social-auth', include('social_django.urls', namespace='social')),
     # unused views
     # path('login/', views.user_login, name='login')
 ]
