@@ -134,3 +134,10 @@ LOGOUT_URL = 'logout'
 
 # Email settings for testing
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+# Authentification settings
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentification.EmailAuthBackend'
+]
