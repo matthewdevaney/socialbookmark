@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['mysite.com',
                  '1ocalhost',
                  '127.0.0.1',
-                 '4527b7d9.ngrok.io']
+                 '927bbc5a.ngrok.io']
 
 
 # Application definition
