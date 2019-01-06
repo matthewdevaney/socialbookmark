@@ -13,7 +13,7 @@ class Image(models.Model):
                             blank=True)
     url = models.URLField()
     image = models.ImageField(upload_to='images/%Y/%m/%d')
-    description = models.TextField(blank=True),
+    description = models.TextField(blank=True)
     created = models.DateField(auto_now_add=True,
                                db_index=True)
     users_like = models.ManyToManyField(settings.AUTH_USER_MODEL,
@@ -26,4 +26,5 @@ class Image(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
-        super(Image, self.save(*args, **kwargs))
+        super(Image, self).save(*args, **kwargs)
+
