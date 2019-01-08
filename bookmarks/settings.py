@@ -10,6 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
+# django modules
+from django.urls import reverse_lazy
+
+# other modules
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -152,3 +156,10 @@ AUTHENTICATION_BACKENDS = [
 # Google OAuth2
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '222799485465-ujgamdo1r559if1vbtbvtejs2ia654gp.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '15nhGqygWCUAoHTIYFh_pPA-'
+
+
+# dynamically add get_absolute_url to any included models
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('user_detail',
+                                        args=[u.username])
+}
