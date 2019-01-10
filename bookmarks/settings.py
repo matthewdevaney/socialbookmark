@@ -32,7 +32,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['mysite.com',
                  '1ocalhost',
                  '127.0.0.1',
-                 '3b741646.ngrok.io']
+                 '6d4fbe08.ngrok.io']
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'account.apps.AccountConfig',
+    'actions.apps.ActionsConfig',
     'images.apps.ImagesConfig',
     'django.contrib.admin',
     'social_django',
